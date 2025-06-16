@@ -18,6 +18,9 @@
     --foreground: #ededed;
   }
 }
+/* Tailored leafy clip with more appealing trapezoid shape */
+
+  
 
 body {
   background: var(--background);
