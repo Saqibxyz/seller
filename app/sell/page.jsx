@@ -1,3 +1,4 @@
+
 // "use client";
 
 // import React, { useState } from "react";
@@ -7,16 +8,16 @@
 
 // const BASE_URI = process.env.NEXT_PUBLIC_BASE_URI;
 
-// const Sell = () => {
-//   const router = useRouter();
+// export default function Sell() {
 //   const { user } = useUser();
+//   const router = useRouter();
 
 //   const [form, setForm] = useState({
 //     name: "",
 //     price: "",
 //     description: "",
 //     image: "",
-//     category: "Pesticide", // default value
+//     category: "Pesticide",
 //   });
 
 //   const [loading, setLoading] = useState(false);
@@ -35,12 +36,12 @@
 //     setMessage("");
 
 //     try {
-//       const res = await axios.post(`${BASE_URI}/add-product`, {
+//       await axios.post(`${BASE_URI}/add-product`, {
 //         ...form,
 //         sellerId: user.id,
 //       });
 
-//       setMessage("✅ Product added successfully!");
+//       setMessage("Product added successfully.");
 //       setForm({
 //         name: "",
 //         price: "",
@@ -50,30 +51,30 @@
 //       });
 //     } catch (err) {
 //       console.error("Error adding product:", err);
-//       setMessage("❌ Failed to add product. Try again.");
+//       setMessage("Failed to add product. Please try again.");
 //     } finally {
 //       setLoading(false);
 //     }
 //   };
 
 //   return (
-//     <div className="min-h-screen bg-[#f4f4ff] py-12 px-4">
-//       <button
-//         onClick={() => router.push("/sell-history")}
-//         className="bg-[#6d46fa] hover:bg-[#5e005e] text-white px-10 py-4 text-lg rounded-xl shadow transition-all"
-//       >
-//         Product History
-//       </button>
-//       <h1 className="text-3xl font-bold text-center text-[#6d46fa] mb-10">
-//         Sell a Product
-//       </h1>
+//     <div className="min-h-screen bg-[#f4f4ff] px-4 py-12">
+//       <div className="max-w-4xl mx-auto flex items-center justify-between mb-10">
+//         <h1 className="text-3xl font-bold text-[#6d46fa]">Sell a Product</h1>
+//         <button
+//           onClick={() => router.push("/sell-history")}
+//           className="bg-[#6d46fa] hover:bg-[#5a38db] text-white px-6 py-2 rounded-lg shadow transition"
+//         >
+//           View Product History
+//         </button>
+//       </div>
 
 //       <form
 //         onSubmit={handleSubmit}
-//         className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg border border-[#6d46fa]/20 space-y-6"
+//         className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-lg border border-[#6d46fa]/20 space-y-6"
 //       >
 //         <div>
-//           <label className="block text-sm font-semibold text-gray-700">
+//           <label className="block text-sm font-medium text-gray-700">
 //             Product Name
 //           </label>
 //           <input
@@ -88,7 +89,7 @@
 //         </div>
 
 //         <div>
-//           <label className="block text-sm font-semibold text-gray-700">
+//           <label className="block text-sm font-medium text-gray-700">
 //             Price (₹)
 //           </label>
 //           <input
@@ -103,7 +104,7 @@
 //         </div>
 
 //         <div>
-//           <label className="block text-sm font-semibold text-gray-700">
+//           <label className="block text-sm font-medium text-gray-700">
 //             Description
 //           </label>
 //           <textarea
@@ -112,17 +113,17 @@
 //             onChange={handleChange}
 //             rows={3}
 //             required
-//             placeholder="Brief about your product..."
+//             placeholder="Brief description of the product..."
 //             className="w-full mt-1 px-4 py-2 bg-white border border-gray-300 text-gray-800 rounded-md placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#6d46fa] focus:border-[#6d46fa] transition"
 //           ></textarea>
 //         </div>
 
 //         <div>
-//           <label className="block text-sm font-semibold text-gray-700">
+//           <label className="block text-sm font-medium text-gray-700">
 //             Image URL
 //           </label>
 //           <input
-//             type="text"
+//             type="url"
 //             name="image"
 //             value={form.image}
 //             onChange={handleChange}
@@ -133,7 +134,7 @@
 //         </div>
 
 //         <div>
-//           <label className="block text-sm font-semibold text-gray-700">
+//           <label className="block text-sm font-medium text-gray-700">
 //             Category
 //           </label>
 //           <select
@@ -152,15 +153,17 @@
 //         <button
 //           type="submit"
 //           disabled={loading}
-//           className="w-full bg-[#6d46fa] hover:bg-[#5a38db] text-white font-bold py-3 rounded-lg transition duration-200"
+//           className="w-full bg-[#6d46fa] hover:bg-[#5a38db] text-white font-semibold py-3 rounded-lg transition"
 //         >
 //           {loading ? "Submitting..." : "Add Product"}
 //         </button>
 
 //         {message && (
 //           <div
-//             className={`text-center mt-3 font-medium ${
-//               message.startsWith("✅") ? "text-green-600" : "text-red-600"
+//             className={`text-center font-medium ${
+//               message.includes("successfully")
+//                 ? "text-green-600"
+//                 : "text-red-600"
 //             }`}
 //           >
 //             {message}
@@ -169,9 +172,7 @@
 //       </form>
 //     </div>
 //   );
-// };
-
-// export default Sell;
+// }
 "use client";
 
 import React, { useState } from "react";

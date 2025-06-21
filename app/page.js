@@ -1,35 +1,4 @@
-// "use client";
 
-// import { useRouter } from "next/navigation";
-
-
-// export default function Home() {
-//   const router = useRouter();
-
-//   return (
-//     <div className="min-h-screen bg-[#f8f8f8]">
-     
-      
-
-//       {/* Main Buttons */}
-//       <div className="flex flex-col items-center justify-center h-[80vh] space-y-10">
-//         <button
-//           onClick={() => router.push("/sell")}
-//           className="bg-[#6d46fa] hover:bg-[#5e005e] text-white px-10 py-4 text-lg rounded-xl shadow transition-all"
-//         >
-//           Sell Product
-//         </button>
-
-//         <button
-//           onClick={() => router.push("/pick")}
-//           className="bg-[#6d46fa] hover:bg-[#5e005e] text-white px-10 py-4 text-lg rounded-xl shadow transition-all"
-//         >
-//           Pick Order
-//         </button>
-//       </div>
-//     </div>
-//   );
-// }
 "use client";
 
 import { useRouter } from "next/navigation";
