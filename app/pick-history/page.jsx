@@ -63,11 +63,11 @@
 //         </button>
 //         <button
 //           className={`px-6 py-2 rounded-lg text-sm font-medium transition-all shadow ${
-//             filter === "delivered"
+//             filter === "Delivered"
 //               ? "bg-[#6d46fa] text-white"
 //               : "bg-gray-200 text-gray-700 hover:bg-gray-300"
 //           }`}
-//           onClick={() => setFilter("delivered")}
+//           onClick={() => setFilter("Delivered")}
 //         >
 //           Delivery History
 //         </button>
@@ -75,7 +75,7 @@
 
 //       {filteredOrders.length === 0 ? (
 //         <div className="text-center text-gray-500">
-//           No {filter === "pending" ? "pending" : "delivered"} orders found.
+//           No {filter === "pending" ? "pending" : "Delivered"} orders found.
 //         </div>
 //       ) : (
 //         <div className="space-y-6 max-w-3xl mx-auto">
@@ -202,11 +202,11 @@ export default function PickedHistory() {
         </button>
         <button
           className={`px-6 py-2 rounded-lg text-sm font-medium transition-all shadow ${
-            filter === "delivered"
+            filter === "Delivered"
               ? "bg-[#6d46fa] text-white"
               : "bg-gray-200 text-gray-700 hover:bg-gray-300"
           }`}
-          onClick={() => setFilter("delivered")}
+          onClick={() => setFilter("Delivered")}
         >
           Delivery History
         </button>
@@ -214,7 +214,7 @@ export default function PickedHistory() {
 
       {filteredOrders.length === 0 ? (
         <div className="text-center text-gray-500">
-          No {filter === "pending" ? "pending" : "delivered"} orders found.
+          No {filter === "pending" ? "pending" : "Delivered"} orders found.
         </div>
       ) : (
         <div className="space-y-6 max-w-3xl mx-auto">
